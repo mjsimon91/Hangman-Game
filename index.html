@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <!-- Linking to my javascript file -->
+
+  <!-- Linking to my CSS file -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Creating the header to give context to the page and instructions on how to begin -->
+
+  <header>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">Hangman</h1>
+        <p class="lead">Press any key to get started!</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- End of header and beggining of the body, where the player can play the game -->
+
+  <!-- Creating a card that will display the number of letters in the word as well as the letters that have been guessed -->
+
+  <div class="answer">
+      <h1 id="answer"></h1>
+    </div>
+
+  <!-- Adding a card that will hold the number of times a player has successfully guessed a word -->
+
+  <div class="card">
+    <div class="card-body wins-class">
+      <h1>Wins</h1>
+      <p id="wins"></p>
+    </div>
+  </div>
+
+  <!-- Adding a card for the letters that have been guessed as well as the remaining letters-->
+
+
+  <div class="card-body remaining-class">
+    <h1>Remaining Guesses</h1>
+    <p id="remaining-guesses"></p>
+  </div>
+
+  <div class="card-body guessed-class">
+    <h1>Letters Guessed</h1>
+    <p id="letters-guessed"></p>
+  </div>
+
+
+
+
+<script src="assets/javascript/game.js"></script>
+
+
+</body>
+
+</html>
