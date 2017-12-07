@@ -13,3 +13,30 @@
 .answer {
   text-align: center;
 }
+
+.jumbotron  {
+  background-image: url("../images/Snow.png");
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 90px;
+}
+
+.jumbotron p {
+  font-size: 45px;
+}
+
+body {
+  font-family: 'Lobster', cursive;
+}
+
+body h1 {
+  font-size: 48px;
+}
+
+body p {
+  font-size: 36px;
+}
