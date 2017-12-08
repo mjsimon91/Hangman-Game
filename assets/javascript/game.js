@@ -10,7 +10,6 @@ var remainingGuesses;
 var currentWord;
 var selectedWord;
 var hiddenCurrentWord;
-var audioElement;
 
 // display variables in the HTML
 updateHtml = function() {
@@ -29,7 +28,6 @@ newGame = function() {
 	selectedWord = words[Math.floor(Math.random()* words.length)];
 	currentWord = selectedWord.toLowerCase();
 	console.log(selectedWord);
-
 
 	for (var i = 0; i < currentWord.length; i++) { 	//creating a loop to find the number of characters to display on screen
 		if (currentWord.charAt(i) != ' ') { 					//For each character, look if there is not a space
@@ -53,15 +51,14 @@ document.onkeyup = function(event) {
 	var userGuess = event.key;
 
 	var found = false;
-	console.log(lettersFound);
-	console.log(lettersGuessed);
+	// console.log(lettersFound);
+	// console.log(lettersGuessed);
 
-	if (lettersFound.includes(userGuess) ||
-			lettersGuessed.includes(userGuess)) {
-				alert("You have already guessed this letter.");
-				return;
-	}
-	lettersGuessed.push(userGuess.toUpperCase());
+	if (lettersFound.includes(userGuess) || lettersGuessed.includes(userGuess.toUpperCase())) {
+        alert("You have already guessed this letter.");
+        return;
+    }
+    lettersGuessed.push(userGuess.toUpperCase());
 //Creating a loop to go through each letter in the currentWord and determine if the userGuess belongs in place of the underscore
 
 	for (var i = 0; i < currentWord.length; i++) {
@@ -79,10 +76,8 @@ document.onkeyup = function(event) {
 		// incorrect guess
 		remainingGuesses--;
 		if (remainingGuesses == 0) {
-
-			// the user lost this game and will now see the word
-
-			alert("Oh no! You did not figure out that the word was " + selectedWord);
+			// the user lost this game
+			alert("Oh no! You did not figure out that the word was: " + selectedWord);
 			newGame();
 		}
 	}
@@ -90,12 +85,8 @@ document.onkeyup = function(event) {
 	if (currentWord.replace(/\s/g, "").length == lettersFound.length) {
 		// the user won this game
 		wins++;
-
-		alert("Winner!")
 		newGame();
 	}
 
-
 	updateHtml();
-
 }
